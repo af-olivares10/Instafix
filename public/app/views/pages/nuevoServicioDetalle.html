@@ -1,0 +1,93 @@
+<div class=" row titulo" style="font-size: 50px; color: white;   border-bottom:5px solid #8e0b0b;" align="center">
+  Información del servicio solicitado
+</div>
+<div class = "row" style="height:50px;">
+</div>
+
+
+<div class=" row " >
+  <div class=" col-md-7 " style="text-align:center">
+    <img src="../../assets/img/o6.png" width="400" height="500">
+  </div>
+  <div class=" col-md-5 " >
+    <form  name="up.upload_form">
+
+      <div class=" row titulo" style="font-size: 23px; color: white" align="left">
+        <label for="ciudad" align = "center">
+          Ciudad
+        </label>
+      </div>
+      <div class="row">
+        <select  ng-model="up.servicioData.ciudad" >
+          <option value="bogota">Bogotá</option>
+          <option value="cali">Cali</option>
+          <option value="barranquilla">Barranquilla</option>
+          <option value="chia">Chía</option>
+        </select><br>
+      </div>
+
+      <div class = "row" style="height:50px;">
+      </div>
+
+
+      <div class=" row titulo" style="font-size: 23px; color: white" align="left">
+        <label for="direccion" align = "center">
+          Dirección del servicio
+        </label>
+      </div>
+      <div class="row">
+        <input type="text" id="direccion"  placeholder="Ingrese la dirección..."  ng-model="up.servicioData.direccion"><br>
+      </div>
+
+      <div class = "row" style="height:50px;">
+      </div>
+      <div class=" row titulo" style="font-size: 23px; color: white" align="left">
+        <label for="descripcion" align = "center">
+          Descripción
+        </label>
+      </div>
+      <div class="row">
+        <textarea name="Text1" id="descripcion" cols="60" rows="5" placeholder="Describa brevemente el trabajo..." ng-model="up.servicioData.descripcion"></textarea>
+
+      </div>
+      <div class = "row" style="height:0px;">
+      </div>
+      <div class=" row titulo" style="font-size: 23px; color: white" align="left">
+        <label for="descripcion" align = "center">
+          Adjunte fotos del trabajo
+        </label>
+      </div>
+
+        <input
+           type="file"
+           ngf-select
+           multiple
+           ng-model="up.files"
+           name="files"
+           ngf-pattern="'image/*'"
+           accept="image/*"
+           accept="image/*"
+           ngf-max-size="20MB"
+           style=" color: white"
+           />
+      <div class = "row" style="height:50px;">
+      </div>
+      <div class = "row">
+        <div class = "col-md-9">
+          <div style="color:red" ng-if="up.error" align ='center'>
+            {{ up.error }}
+          </div>
+        </div>
+      </div>
+      <div class=" row">
+        <div class=" col-sm-4">
+        </div>
+        <button type="submit" class="btn btn-premier botonCaja  col-sm-4" style="text-align:center;"  ng-click="up.solicitarServicio()">
+          <span  >Enviar</span>
+        </button>
+        <div class = "row" style="height:75px;">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

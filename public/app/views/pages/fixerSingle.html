@@ -1,0 +1,108 @@
+
+<div class="row">
+
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-4">
+        <img ng-src ="{{fixer.perfil}}" style="display: block; max-width:95%; max-height:100%; width: auto; height: auto;">
+      </div>
+      <div class="col-md-6">
+        <div class = "row">
+          <div class=" titulo" style="font-size: 25px; color: white;" align="left">
+            {{fixer.name}}
+          </div>
+        </div>
+        <div class = "row" style="height:15px;">
+        </div>
+        <div class = "row">
+          <div class ="col-md-1" ng-repeat="i in getEstrellas(fixer.estrellas) track by $index">
+            <span class="fa fa-star checked" style="padding-top: 1px; font-size:18px; "></span>
+          </div>
+          <div class ="col-md-1" ng-repeat="i in getNoEstrellas(fixer.estrellas) track by $index">
+            <span class="fa fa-star no-checked" style="padding-top: 1px; font-size:18px; "></span>
+          </div>
+
+          <div class ="col-md-5" >
+            <span style="font-size: 25px; color: white; height:30px;">({{fixer.votos}})</span>
+          </div>
+        </div>
+        <div class = "row" style="height:15px;">
+        </div>
+        <div class = "row">
+          <div  style="font-family:'Trebuchet MS', monospace;    font-size: 18px; color: #a0a0a0;" align="left">
+            {{fixer.descripcion}}
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-2" style="    border-left: 1px solid #fff;    height: 1px;     text-aling: center; ">
+      </div>
+    </div>
+    <div class = "row" style="height:60px;">
+    </div>
+    <div class=" titulo" style="font-size: 40px; color: white;" align="left">
+      Mis referencias
+    </div>
+    <div class = "row" style="height:30px;">
+    </div>
+    <div ng-repeat="referencia in referencias">
+      <div class = "row" style="height:30px;">
+      </div>
+      <div class="row">
+        <div class="col-md-2 titulo"  align="left">
+          <img ng-src ="{{referencia.cliente.perfil}}" style="max-width:95%; max-height:100%; width: auto; height: auto;" class = "img-circle">
+        </div>
+        <div class="col-md-2 titulo" style="font-size: 20px; color: white;" align="left">
+          {{referencia.cliente.username}}:
+        </div>
+        <div class="col-md-5 titulo" style="font-size: 20px; color: white;" align="left">
+          {{referencia.texto}}
+        </div>
+        <div class="col-md-3 titulo" style="font-size: 20px; color: white;" align="left">
+
+        <div class = "row">
+          <div class ="col-md-1" ng-repeat="i in getEstrellas(referencia.estrellas) track by $index">
+            <span class="fa fa-star checked" style="padding-top: 1px; font-size:18px; "></span>
+          </div>
+          <div class ="col-md-1" ng-repeat="i in getNoEstrellas(referencia.estrellas) track by $index">
+            <span class="fa fa-star no-checked" style="padding-top: 1px; font-size:18px; "></span>
+          </div>
+
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+    <div class = "row" style="height:30px;">
+    </div>
+    <div class="row titulo" style="font-size: 40px; color: white;" align="left">
+      Mis trabajos
+    </div>
+    <div class = "row" style="height:30px;">
+    </div>
+    <div ng-repeat="rows in trabajos">
+      <div class="row">
+        <div ng-repeat="trabajo in rows">
+          <div class="col-md-6" >
+            <img ng-src ="{{trabajo}}" style="width: 300px; height: 300px;">
+          </div>
+        </div>
+      </div>
+      <div class = "row" style="height:30px;">
+      </div>
+    </div>
+    <div class = "row">
+      <div class="col-md-3">
+      </div>
+
+      <div class = "row" style="height:30px;">
+      </div>
+    </div>
+
+  </div>
+</div>

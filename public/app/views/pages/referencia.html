@@ -1,0 +1,25 @@
+<div class="col-md-4">
+
+</div>
+<div class="col-md-5">
+
+<form name="main.upload_form">
+
+<div class="form-group">
+  <label class = "tituloBlanco"><font size ="4">Calificación</font></label>
+  <input type="text" class="form-control tituloBlanco"	ng-model="main.referencia.estrellas">
+</div>
+
+<!-- USERNAME INPUT -->
+<div class="form-group w">
+  <label class = "tituloBlanco"><font size ="4">Comentario</font></label>
+  <textarea name="Text1" id="descripcion" cols="60" rows="5" placeholder="Describa brevemente su experienca con el fixer" ng-model="main.referencia.texto"></textarea>
+</div>
+<button type="submit" class="btn btn-block botonCaja" ng-click="main.enviar()">
+  <span ng-if="!main.processing"  >Enviar</span>
+  <span ng-if="main.processing" class="spinner">
+    <span class="glyphicon glyphico n-repeat"></span>
+  </span>
+</button>
+</form>
+</div>

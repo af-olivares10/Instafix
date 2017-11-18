@@ -1,0 +1,41 @@
+<div  class="row"  ng-if="login.processing">
+
+	<div align="center" class="col-md-12" >
+			<div  class="loader" align ="center"></div>
+</div>
+
+</div>
+
+<div class="row col-sm-6 col-sm-offset-3 "  ng-if="!login.processing" >
+
+	<div class="jumbotron centrado fondoNegro">
+		<h1 style ="color: #ffffff" class = "tituloBlanco">Acceder a Instafix</h1>
+
+		<form ng-submit="login.doLogin()">
+			<!-- USERNAME INPUT -->
+			<div class="form-group">
+				<label class = "tituloBlanco"><font size ="4">Usuario</font></label>
+				<input type="text" class="form-control tituloBlanco"	ng-model="login.loginData.username">
+			</div>
+
+			<!-- PASSWORD INPUT -->
+			<div class="form-group">
+				<label class = "tituloBlanco"><font size ="4">Contraseña</font></label>
+				<input type="password" class="form-control" ng-model="login.loginData.password">
+			</div>
+			<div style="color:red" ng-if="login.error">
+				{{ login.error }}
+			</div>
+			<!-- LOGIN BUTTON -->
+			<button type="submit" class="btn btn-block botonCaja" >
+				<span >Ingresar</span>
+			</button>
+
+		</form>
+		<div align="center" class="tituloBlanco" >
+				<a href="/signUp">¿No tienes cuenta? ¡Únete!</a>
+		</div>
+	</div>
+
+
+</div>

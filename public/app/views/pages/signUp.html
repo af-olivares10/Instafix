@@ -1,0 +1,82 @@
+
+
+<div  class="row"  ng-if="main.processing">
+
+	<div align="center" class="col-md-12" >
+			<div  class="loader" align ="center"></div>
+</div>
+
+</div>
+
+<div  class="row"  ng-if="!main.processing">
+	<div align="left" class="tituloBlanco col-md-6" ng-if="!main.loggedIn" >
+		<a href="/nuevo-fixer">¿Quieres ser Fixer? ¡Trabaja con nosotros! </a>
+	</div>
+	<div align="right" class="tituloBlanco col-md-6" ng-if="!main.loggedIn" >
+		<a href="/login">Iniciar sesión</a>
+	</div>
+
+</div>
+<div class="row col-sm-6 col-sm-offset-3 " ng-if="!main.processing">
+
+	<div class="jumbotron centrado fondoNegro"ng-if="!main.loggedIn">
+		<h1 style ="color: #ffffff" class = "tituloBlanco">Únete a Instafix </h1>
+
+		<form name="main.upload_form">
+			<div class="form-group">
+				<label class = "tituloBlanco"><font size ="4">Nombre</font></label>
+				<input type="text" class="form-control tituloBlanco"	ng-model="main.signUpData.name">
+			</div>
+
+			<!-- USERNAME INPUT -->
+			<div class="form-group w">
+				<label class = "tituloBlanco"><font size ="4">Usuario</font></label>
+				<input type="text" class="form-control tituloBlanco"	ng-model="main.signUpData.username">
+			</div>
+			<form>
+			</form>
+			<!-- PASSWORD INPUT -->
+			<div class="form-group">
+				<label class = "tituloBlanco"><font size ="4">Contraseña</font></label>
+				<input type="password" class="form-control" ng-model="main.signUpData.password">
+			</div>
+			<p>
+				<div class="form-group">
+
+					<label style="font-size: 4" align="left" class="tituloBlanco">
+						Foto de perfil
+					</label>
+				</div>
+				<div class="form-group">
+					<input
+					type="file"
+					ngf-select
+					ng-model="main.signUpData.perfil"
+					name="perfil"
+					ngf-pattern="'image/*'"
+					accept="image/*"
+					accept="image/*"
+					ngf-max-size="20MB"
+					style="padding-top: 0px; color: white"
+					/>
+				</div>
+
+
+				<div style="color:red" ng-if="main.error">
+					{{ main.error }}
+				</div>
+				<div ng-if="main.processing">
+					<button type="submit" class="btn btn-block botonCaja" ng-click="main.doSignUp()" ng-if="!main.processing" >
+						<span  >Ingresar</span>
+					</button>
+				</div>
+
+				<button type="submit" class="btn btn-block botonCaja" ng-click="main.doSignUp()" ng-if="!main.processing" >
+					<span  >Ingresar</span>
+				</button>
+
+
+			</form>
+		</div>
+
+	</div>

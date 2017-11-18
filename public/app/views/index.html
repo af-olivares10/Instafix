@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="shortcut icon" href="../../assets/img/logo.png" type="image/x-icon"
+	<meta charset="UTF-8">
+
+	<title>Instafix</title>
+
+	<!-- FOR ANGULAR ROUTING -->
+	<base href="/">
+
+	<!-- CSS  -->
+	<!-- load bootstrap from CDN and custom CSS -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.1/paper/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- JS -->
+	<!-- load angular and angular-route via CDN -->
+
+	<script src="assets/libs/angular/angular.min.js"></script>
+	<script src="assets/libs/angular-route/angular-route.min.js"></script>
+	<script src="assets/libs/angular-animate/angular-animate.min.js"></script>
+	<!-- Dependencias para poder subir archivos -->
+
+	<script src="assets/libs/ng-file-upload/ng-file-upload-shim.min.js"></script>
+	<script src="assets/libs/ng-file-upload/ng-file-upload.min.js"></script>
+	<script src="assets/libs/angular-base64-upload/dist/angular-base64-upload.js"></script>
+	<script src="assets/libs/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+
+
+	<!-- controllers -->
+	<script src="app/controllers/mainCtrl.js"></script>
+	<script src="app/controllers/userCtrl.js"></script>
+	<script src="app/controllers/servicioCtrl.js"></script>
+	<script src="app/controllers/fixerCtrl.js"></script>
+	<script src="app/controllers/referenciaCtrl.js"></script>
+
+	<!-- services -->
+	<script src="app/services/authService.js"></script>
+	<script src="app/services/userService.js"></script>
+	<script src="app/services/servicioService.js"></script>
+	<script src="app/services/imagePostService.js"></script>
+
+	<!-- main Angular app files -->
+	<script src="app/app.routes.js"></script>
+	<script src="app/app.js"></script>
+</head>
+
+<body ng-app="userApp" ng-controller="mainController as main" ng-class="main.loggedIn ? 'fondoNegro' : 'fondoNegro'" >
+
+	<!-- NAVBAR -->
+	<header ng-if="main.loggedIn">
+		<div class="navbar navbar-inverse" >
+			<div class="container">
+				<div class="navbar-header navbar-center tituloInstafix">
+					<a href="/inicio">I n s t a f i x <img src="../../assets/img/logo.png" width="60" height="60"> </a>
+				</div>
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<li	><img  alt="Imagen" src="{{main.user.perfil}}" width="60" height="60"></li>
+					<li ng-if="main.loggedIn" class="tituloBlanco" ><a>Hola {{ main.user.name }}</a></li>
+					<li ng-if="main.loggedIn"  class ="tituloBlanco"><a href="/users">Mi cuenta</a></li>
+					<li ng-if="main.loggedIn" class ="tituloBlanco"><a href="/" ng-click="main.doLogout()">Salir</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</header>
+
+
+
+	<main class="container" style="min-width : 80%">
+		<!-- ANGULAR VIEWS -->
+		<div ng-view></div>
+	</main>
+</body>
+</html>

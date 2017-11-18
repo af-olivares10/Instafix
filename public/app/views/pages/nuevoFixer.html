@@ -1,0 +1,105 @@
+<div  class="row"  ng-if="main.processing">
+
+  <div align="center" class="col-md-12" >
+    <div  class="loader" align ="center"></div>
+  </div>
+
+</div>
+<div class = "row" style="height:50px;">
+</div>
+<div class=" row titulo" style="font-size: 50px; color: white;   border-bottom:5px solid #8e0b0b;" align="center"  ng-if="!main.processing">
+  ¿Qué servicios ofreces?
+</div>
+<form ng-submit="main.seleccionarServiciosFixer()" ng-if="!main.processing">
+
+  <div class = "row" style="height:150px;" >
+  </div>
+  <div class = "row">
+    <div class = "col-md-9 frame" style="background:url(../../assets/img/corcho.png) no-repeat">
+      <div class = "row" style="height:40px;">
+      </div>
+      <div class = "container">
+
+        <div class = "row  col-md-3">
+          <label>
+            <input type="checkbox" ng-model="main.fixerData.alba" />
+            <img src="../../assets/img/alba.png" width="200" height="200">
+          </label>
+        </div>
+        <div class = "col-md-3 ">
+          <label>
+            <input type="checkbox"  ng-model="main.fixerData.carp"/>
+            <img src="../../assets/img/carp.png" width="200" height="200">
+          </label>
+        </div>
+        <div class = "col-md-3">
+          <label>
+            <input type="checkbox"  ng-model="main.fixerData.elec"/>
+            <img src="../../assets/img/elec.png" width="200" height="200">
+          </label>
+        </div>
+
+      </div>
+      <div class = "row" style="height:50px;">
+      </div>
+      <div class = "container">
+
+        <div class = "row  col-md-3">
+          <label>
+            <input type="checkbox" ng-model="main.fixerData.jard" />
+            <img src="../../assets/img/jard.png" width="200" height="200">
+          </label>
+        </div>
+        <div class = "col-md-3 ">
+          <label>
+            <input type="checkbox" ng-model="main.fixerData.pint" />
+            <img src="../../assets/img/pint.png" width="200" height="200">
+          </label>
+        </div>
+        <div class = "col-md-3">
+          <label>
+            <input type="checkbox"  ng-model="main.fixerData.plom"/>
+            <img src="../../assets/img/plom.png" width="200" height="200">
+          </label>
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <div class = "col-md-1">
+    </div>
+
+    <div class = "col-md-2">
+      <img src="../../assets/img/o2.png" width="220" height="500">
+
+    </div>
+    <div class = "row" style="height:40px;">
+    </div>
+  </div>
+  <div class = "row" style="height:50px;">
+  </div>
+  <div class = "row" >
+
+  </div>
+  <div class = "row">
+    <div class = "col-md-9">
+      <div style="color:red" ng-if="main.error" align ='center'>
+        {{ main.error }}
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-md-9">
+      <div class = "tituloBlanco" align="center">
+        <button type="submit"  class = "boton-cool" style="  font-size:20px; border-top:transparent;border-left-color:transparent;border-right-color:transparent">
+          Listo
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class = "row" style="height:40px;">
+</div>

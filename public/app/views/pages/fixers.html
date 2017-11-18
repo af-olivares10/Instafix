@@ -1,0 +1,68 @@
+<div class=" row titulo" style="font-size: 50px; color: white; " align="center" ng-if = "main.hayFixers()">
+  Escoge a tu Fixer
+</div>
+<div class=" row titulo" style="font-size: 30px; color: grey; " align="center" ng-if = "!main.hayFixers()">
+  Lo sentimos, actualmente no hay un Fixer que pueda hacer esos trabajos en esa ciudad . :/
+</div>
+<div class = "row" style="height:100px;">
+</div>
+<div class = "row" >
+
+
+  <div ng-repeat="row in rows">
+    <div ng-repeat="fixer in row">
+      <div class="col-md-6" >
+        <div class="row">
+          <div class="col-md-4">
+            <img ng-src ="{{fixer.perfil}}" style="display: block; max-width:100%; max-height:100%; width: auto; height: auto;">
+          </div>
+          <div class="col-md-8">
+            <div class = "row">
+              <div class=" titulo col-md-12" style="font-size: 25px; color: white;" align="left">
+                {{fixer.name}}
+              </div>
+            </div>
+            <div class = "row">
+              <div class ="col-md-1" ng-repeat="i in getEstrellas(fixer.estrellas) track by $index">
+                <span class="fa fa-star checked" style="padding-top: 1px; font-size:18px; "></span>
+              </div>
+              <div class ="col-md-1" ng-repeat="i in getNoEstrellas(fixer.estrellas) track by $index">
+                <span class="fa fa-star no-checked" style="padding-top: 1px; font-size:18px; "></span>
+              </div>
+
+            </div>
+            <div class = "row">
+              <div class = "col-md-12" style="font-family:'Trebuchet MS', monospace;    font-size: 18px; color: grey;" align="left">
+                {{fixer.descripcion}}
+              </div>
+            </div>
+            <div class = "row" style="height:15px;">
+            </div>
+            <div class = "row">
+              <div class = "col-md-5">
+                <div align = "left">
+                  <a  class="btn btn-premier botonCaja" style="text-align:center;" ng-href="/fixers/{{ fixer._id }}" >
+                    <span  >Perfil completo</span>
+                  </a>
+                </div>
+              </div>
+              <div class = "col-md-6">
+                <div align = "left">
+                  <button type="submit" class="btn btn-premier " style="text-align:center;   background-color:#055772; color: white;" >
+                    <span  >Cotizar</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class = "row" style="height:50px;">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>

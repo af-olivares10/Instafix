@@ -1,0 +1,72 @@
+<div  class="row"  >
+	<div align="left" class="tituloBlanco col-md-6" ng-if="!main.loggedIn" >
+		<a href="/nuevo-fixer">¿Quieres ser Fixer? ¡Trabaja con nosotros! </a>
+	</div>
+	<div align="right" class="tituloBlanco col-md-6" ng-if="!main.loggedIn" >
+		<a href="/login">Iniciar sesión</a>
+	</div>
+
+</div>
+<div class=" text-center fondoNegro ">
+	<div class="row">
+		<h1 style ="color: #ffffff" class = "tituloBlanco">¡Bienvenido a Instafix!</h1>
+	</div>
+	<div class = "row" style="height:50px;">
+	</div>
+	<div class="row">
+		<div ng-if="!main.loggedIn">
+			<div class="col-md-2">
+				<img src="../../assets/img/o1.png" width="200" height="370" >
+			</div>
+			<div class="col-md-8">
+				<p  class = "tituloBlanco">
+					<font size = "4">
+						Ingrese a Instafix para encontrar mano de obra capacitada al instante.
+					</font>
+				</p>
+				<div class = "row" style="height:50px;">
+				</div>
+				<img src="../../assets/img/logo.png" width="150" height="150"  align = "center">
+				<div class = "row" style="height:50px;">
+				</div>
+				<div class = "row">
+					<div class = "col-md-6">
+						<div class="button-8" >
+							<div class="eff-8"></div>
+							<a href="/signUp"> <font class = "titulo" size ="5">Unirse</font></a>
+						</div>
+					</div>
+					<div ng-if = "main.loggedIn" >
+						<div class = "col-md-6" >
+							<div class="button-8" >
+								<div class="eff-8"></div>
+								<a href="/inicio" ng-click="main.entrar()"> <font class = "titulo" size ="5">Solicitar servicio</font></a>
+							</div>
+						</div>
+					</div>
+					<div ng-if = "!main.loggedIn" >
+						<div class = "col-md-6" >
+							<div class="button-8" >
+								<div class="eff-8"></div>
+								<a href="/nuevo-servicio" ng-click="main.entrar()"> <font class = "titulo" size ="5">Solicitar servicio</font></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-1">
+				<img src="../../assets/img/o3.png" width="170" height="370" >
+			</div>
+		</div>
+
+	</div>
+
+	<div ng-if="main.loggedIn">
+		<p class = titulo>Promovemos las buenas prácticas</p>
+		<div class="button-8" >
+			<div class="eff-8"></div>
+			<a href="/inicio"> <font class = "titulo" size ="5">Ingresar</font></a>
+		</div>
+	</div>
+</div>

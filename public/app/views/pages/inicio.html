@@ -1,0 +1,54 @@
+<div class = "row  col-md-12" style="height:150px;">
+</div>
+<div class="row ">
+	<div class=" col-sm-3">
+	</div>
+	<div class="col-sm-6 titulo menu" align = "center" style="color:#9b9b9b; font-size:200% ">
+		<a href="/serviciosDemandante" ng-if="!main.ofertante">	Ver servicios activos</a>
+		<a href="/serviciosOfertante" ng-if="main.ofertante">	Ver servicios activos</a>
+
+	</div>
+</div>
+<div class="row ">
+	<div class=" col-sm-3">
+	</div>
+	<div class=" col-sm-6">
+		<hr class = "lineStyle1">
+	</div>
+</div>
+<div class="row ">
+	<div class=" col-sm-3">
+	</div>
+	<div class="col-sm-6 titulo menu" align = "center" style="color:#9b9b9b; font-size:200% ">
+		<a href="/serviciosDemandante" ng-if="!main.ofertante">	Ver servicios en espera</a>
+		<a href="/serviciosOfertante" ng-if="	main.ofertante">	Ver servicios en espera</a>
+	</div>
+</div>
+<div class="row " ng-if="!main.ofertante">
+	<div class=" col-sm-3">
+	</div>
+	<div class=" col-sm-6">
+		<hr class = "lineStyle1">
+	</div>
+</div>
+<div class="row ">
+	<div class=" col-sm-3">
+	</div>
+	<div class="col-sm-6 titulo menu" align = "center" style="color:#9b9b9b; font-size:200% ">
+		<a href="/referenciarFixer" ng-if="!main.ofertante">	Referenciar fixer</a>
+	</div>
+</div>
+<div class="row ">
+	<div class=" col-sm-3">
+	</div>
+	<div class=" col-sm-6">
+		<hr class = "lineStyle1">
+	</div>
+</div>
+<div class = "row  col-md-12 nuevo-servicio " ng-if="!main.ofertante">
+
+	<div class="button-8" >
+		<div class="eff-8"></div>
+		<a href="/nuevo-servicio"> <font class = "titulo" size ="5">Solicitar nuevo servicio</font></a>
+	</div>
+</div>

@@ -1,0 +1,169 @@
+<div  class="row"  ng-if="up.processing">
+
+  <div align="center" class="col-md-12" >
+    <div  class="loader" align ="center"></div>
+  </div>
+
+</div>
+
+<div class=" row titulo" style="font-size: 50px; color: white;   border-bottom:5px solid #8e0b0b;" align="center" ng-if="!up.processing">
+  Construye tu perfil
+</div>
+<div class = "row" style="height:50px;">
+</div>
+<form name="up.upload_form" ng-if="!up.processing">
+
+<div class="row">
+  <div class="col-md-2">
+    <label style="font-size: 23px; color: white" align="left" class="titulo">
+      Nombre
+    </label>
+  </div>
+
+  <div class="col-md-4">
+    <input align="left"  type="text"  placeholder="Ingrese su nombre completo ..."  ng-model="up.fixerData.name"><br>
+  </div>
+  <div class="col-md-2">
+    <div  align="right" >
+      <label style="font-size: 23px; color: white" class="titulo">
+        login
+      </label>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <input align="left"  type="text"   placeholder="Login"  ng-model="up.fixerData.username"><br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2">
+    <label style="font-size: 23px; color: white" align="left" class="titulo">
+      Teléfono
+    </label>
+  </div>
+
+  <div class="col-md-4">
+    <input align="left"  type="text"   placeholder="Ingrese su número de teléfono ..."  ng-model="up.fixerData.telefono"><br>
+  </div>
+  <div class="col-md-2">
+    <div  align="right" >
+      <label style="font-size: 23px; color: white" class="titulo">
+        Contraseña
+      </label>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <input align="left"  type="password" style = "border-radius: 3px;   width:100%;height: 32px;" placeholder="Contraseña" ng-model="up.fixerData.password"><br>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-2">
+    <label style="font-size: 23px; color: white" align="left" class="titulo">
+      Ciudad
+    </label>
+  </div>
+
+  <div class="col-md-4">
+    <select ng-model="up.fixerData.ciudad">
+      <option value="bogota">Bogotá</option>
+      <option value="cali">Cali</option>
+      <option value="barranquilla">Barranquilla</option>
+      <option value="chia">Chía</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+
+  </div>
+  <div class="col-md-3">
+    <div class = "row">
+      <div class = "col-md-9">
+        <div style="color:red" ng-if="up.error" align ='center'>
+          {{ up.error }}
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-premier botonCaja  col-sm-4" style="text-align:center; width:250px"  ng-click="up.nuevoFixer()">
+      <span  >Enviar</span>
+    </button>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-2">
+    <label style="font-size: 23px; color: white" align="left" class="titulo">
+      Direccion
+    </label>
+  </div>
+
+  <div class="col-md-4">
+    <input align="left"  type="text"   placeholder="Ingrese su direccion ..."  ng-model="up.fixerData.direccion"><br>
+  </div>
+
+</div>
+<div class="row ">
+
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-12">
+        <label style="font-size: 23px; color: white" align="left" class="titulo">
+          Una breve descripción tuya
+        </label>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <textarea name="Text1" id="descripcion" cols="60" rows="5" placeholder="Describete a ti y a tus trabajos" ng-model="up.fixerData.descripcion"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label style="font-size: 23px; color: white" align="left" class="titulo">
+          Foto de perfil
+        </label>
+      </div>
+      <input
+      type="file"
+      ngf-select
+      ng-model="up.perfil"
+      name="perfil"
+      ngf-pattern="'image/*'"
+      accept="image/*"
+      accept="image/*"
+      ngf-max-size="20MB"
+      style="padding-top: 15px; color: white"
+      />
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label style="font-size: 23px; color: white" align="left" class="titulo">
+          Fotos de tus trabajos
+        </label>
+      </div>
+      <input
+      type="file"
+      ngf-select
+      multiple
+      ng-model="up.fotos"
+      name="fotos"
+      ngf-pattern="'image/*'"
+      accept="image/*"
+      accept="image/*"
+      ngf-max-size="20MB"
+      style="padding-top: 15px; color: white"
+      />
+
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div style="text-align: center">
+      <img src="../../assets/img/o7.png"  width="250" height="370">
+    </div>
+  </div>
+</div>
+
+</form>
